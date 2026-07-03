@@ -1,0 +1,150 @@
+{
+  "hospitalName": "Starlight Medical Center",
+  "address": {
+    "street": "1200 Wellness Avenue",
+    "city": "Springfield",
+    "state": "Illinois",
+    "zipCode": "62704",
+    "country": "USA"
+  },
+  "contact": {
+    "phone": "+1 (217) 555-0123",
+    "email": "info@starlightmedical.org"
+  },
+  "opTimings": {
+    "weekdays": "08:00 AM - 08:00 PM",
+    "saturday": "09:00 AM - 06:00 PM",
+    "sunday": "09:00 AM - 02:00 PM"
+  },
+  "emergency": {
+    "available": true,
+    "open24Hours": true,
+    "phone": "+1 (217) 555-0999"
+  },
+  "visitingHours": {
+    "generalWards": "05:00 PM - 07:00 PM",
+    "icu": "05:30 PM - 06:30 PM",
+    "maternity": "04:30 PM - 06:30 PM",
+    "pediatric": "04:00 PM - 06:00 PM"
+  },
+  "departments": [
+    "Cardiology",
+    "Neurology",
+    "Orthopedics",
+    "Pediatrics",
+    "Emergency Medicine",
+    "Radiology",
+    "Oncology",
+    "Obstetrics & Gynecology"
+  ],
+  "doctors": [
+    {
+      "name": "Dr. Maya Patel",
+      "department": "Cardiology",
+      "specialization": "Interventional Cardiology",
+      "qualification": "MD, DM Cardiology",
+      "experience": 14,
+      "availableDays": ["Monday", "Wednesday", "Friday"]
+    },
+    {
+      "name": "Dr. James Carter",
+      "department": "Neurology",
+      "specialization": "Stroke and Neurocritical Care",
+      "qualification": "MD, DM Neurology",
+      "experience": 18,
+      "availableDays": ["Tuesday", "Thursday", "Saturday"]
+    },
+    {
+      "name": "Dr. Aisha Khan",
+      "department": "Orthopedics",
+      "specialization": "Joint Replacement and Sports Medicine",
+      "qualification": "MS Orthopedics, FRCS",
+      "experience": 12,
+      "availableDays": ["Monday", "Tuesday", "Thursday"]
+    },
+    {
+      "name": "Dr. Priya Sharma",
+      "department": "Pediatrics",
+      "specialization": "Pediatric Infectious Disease",
+      "qualification": "MD Pediatrics, Fellowship ID",
+      "experience": 10,
+      "availableDays": ["Monday", "Wednesday", "Friday"]
+    },
+    {
+      "name": "Dr. Robert Lee",
+      "department": "Emergency Medicine",
+      "specialization": "Trauma and Acute Care",
+      "qualification": "MD, FACEM",
+      "experience": 16,
+      "availableDays": ["Everyday"]
+    },
+    {
+      "name": "Dr. Elena Garcia",
+      "department": "Radiology",
+      "specialization": "Diagnostic Imaging and MRI",
+      "qualification": "MD Radiology, FRCR",
+      "experience": 11,
+      "availableDays": ["Tuesday", "Thursday", "Saturday"]
+    },
+    {
+      "name": "Dr. Samuel Chen",
+      "department": "Oncology",
+      "specialization": "Medical Oncology",
+      "qualification": "MD, DM Medical Oncology",
+      "experience": 20,
+      "availableDays": ["Wednesday", "Friday"]
+    },
+    {
+      "name": "Dr. Anjali Mehta",
+      "department": "Obstetrics & Gynecology",
+      "specialization": "Maternal-Fetal Medicine",
+      "qualification": "MD, MS Obstetrics & Gynecology",
+      "experience": 13,
+      "availableDays": ["Monday", "Thursday"]
+    }
+  ],
+  "services": [
+    "24/7 Emergency Care",
+    "Outpatient Consultations",
+    "Inpatient Care",
+    "Diagnostic Imaging (X-ray, MRI, CT)",
+    "Laboratory Services",
+    "Cardiac Catheterization",
+    "Physical Therapy",
+    "Chemotherapy",
+    "Maternity and Newborn Care",
+    "Pharmacy Services"
+  ],
+  "insuranceProvidersAccepted": [
+    "Aetna",
+    "Blue Cross Blue Shield",
+    "Cigna",
+    "UnitedHealthcare",
+    "Humana",
+    "Anthem",
+    "Medicare",
+    "Medicaid"
+  ],
+  "faqs": [
+    {
+      "question": "How can I schedule an appointment?",
+      "answer": "You can schedule an appointment by calling our main line at +1 (217) 555-0123 or by submitting a request through the hospital website contact form."
+    },
+    {
+      "question": "Is there an option for telehealth consultations?",
+      "answer": "Yes, Starlight Medical Center offers telehealth consultations for many outpatient specialties. Please call the clinic desk to book a virtual visit."
+    },
+    {
+      "question": "What documents should I bring for my first visit?",
+      "answer": "Please bring a valid photo ID, your insurance card, a list of current medications, and any recent medical records or test results if available."
+    },
+    {
+      "question": "Do you accept out-of-state insurance plans?",
+      "answer": "We accept a wide range of national insurance providers. Contact our insurance desk to confirm coverage for your specific plan."
+    },
+    {
+      "question": "Can I visit a patient in the ICU?",
+      "answer": "Yes, ICU visiting hours are 05:30 PM to 06:30 PM daily, and visitors must check in at the ICU reception desk."
+    }
+  ]
+}
