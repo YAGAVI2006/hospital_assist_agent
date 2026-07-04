@@ -27,7 +27,7 @@ function App() {
 
   // Fetch hospital data from the backend
   useEffect(() => {
-    fetch('http://localhost:5000/hospital-data')
+fetch("https://hospital-assist-agent.onrender.com/hospital-data")
       .then(res => {
         if (!res.ok) throw new Error(`Backend returned HTTP ${res.status}`);
         return res.json();
