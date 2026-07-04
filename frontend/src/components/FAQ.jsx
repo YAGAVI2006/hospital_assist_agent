@@ -40,7 +40,7 @@ function askAIAbout(question) {
 }
 
 /* ─── Single FAQ item ───────────────────────────────────────── */
-const FAQItem = ({ faq, index }) => {
+const FAQItem = ({ faq }) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -75,7 +75,7 @@ const FAQ = ({ hospitalData }) => {
   const [activeCategory, setActiveCategory] = useState('All');
   const [showAll, setShowAll] = useState(false);
 
-  const faqs = hospitalData?.faqs || [];
+  const faqs = useMemo(() => hospitalData?.faqs || [], [hospitalData]);
 
   // Build categories
   const categories = useMemo(() => {
@@ -97,7 +97,9 @@ const FAQ = ({ hospitalData }) => {
   const displayed = showAll || searchQuery ? filtered : filtered.slice(0, PREVIEW_COUNT);
   const hasMore = filtered.length > PREVIEW_COUNT && !showAll && !searchQuery;
 
-  if (!hospitalData) return null;
+  if (!hospitalData) {
+    return <section id="faq" style={{ padding: 0, margin: 0, height: 0, overflow: 'hidden' }} />;
+  }
 
   return (
     <section id="faq" className="landing-section faq-section">

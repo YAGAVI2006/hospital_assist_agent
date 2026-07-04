@@ -9,14 +9,7 @@ import {
   Zap,
 } from 'lucide-react';
 
-/* ─── Build Google Maps embed URL from address ──────────────── */
-function buildMapUrl(address) {
-  if (!address) return null;
-  const query = encodeURIComponent(
-    `${address.street}, ${address.city}, ${address.state} ${address.zipCode}`
-  );
-  return `https://maps.google.com/maps?q=${query}&output=embed&z=15`;
-}
+
 
 function buildDirectionsUrl(address) {
   if (!address) return '#';
@@ -41,10 +34,11 @@ const ContactCard = ({ icon: Icon, gradient, title, children }) => (
 
 /* ─── Main Contact component ─────────────────────────────────── */
 const Contact = ({ hospitalData }) => {
-  if (!hospitalData) return null;
+  if (!hospitalData) {
+    return <section id="contact" style={{ padding: 0, margin: 0, height: 0, overflow: 'hidden' }} />;
+  }
 
   const { address, contact, opTimings, emergency, hospitalName } = hospitalData;
-  const mapUrl = buildMapUrl(address);
   const directionsUrl = buildDirectionsUrl(address);
 
   // Derive WhatsApp link from main phone (strip non-digits)

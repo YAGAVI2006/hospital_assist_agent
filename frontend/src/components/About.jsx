@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Clock, MapPin, Mail, Phone, Shield, ShieldCheck, Heart } from 'lucide-react';
+import { Clock, MapPin, Mail, Phone, ShieldCheck, Heart } from 'lucide-react';
 
 const About = ({ hospitalData }) => {
   // Use fallback data if state is still loading

@@ -63,7 +63,14 @@ const Services = ({ hospitalData }) => {
   const insuranceProviders = hospitalData?.insuranceProvidersAccepted || [];
   const stats = buildStats(hospitalData);
 
-  if (!hospitalData) return null;
+  if (!hospitalData) {
+    return (
+      <>
+        <section id="services" style={{ padding: 0, margin: 0, height: 0, overflow: 'hidden' }} />
+        <section id="insurance" style={{ padding: 0, margin: 0, height: 0, overflow: 'hidden' }} />
+      </>
+    );
+  }
 
   const handleAskAI = (service) => {
     scrollAndFillChat(`Tell me more about the ${service} at ${hospitalData.hospitalName || 'your hospital'}.`);

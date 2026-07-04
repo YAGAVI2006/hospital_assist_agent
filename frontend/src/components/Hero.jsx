@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Bot, Activity, Calendar, ShieldCheck, Award, HeartHandshake, Sparkles } from 'lucide-react';
+import { ArrowRight, Bot, Activity, ShieldCheck, Award, HeartHandshake, Sparkles } from 'lucide-react';
 
 const Hero = ({ onConsultAI, onBookAppointment }) => {
   const stats = [

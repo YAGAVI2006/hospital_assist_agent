@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import {
   Heart,
   Brain,
@@ -9,13 +9,11 @@ import {
   Ribbon,
   CircleUserRound,
   Search,
-  Users,
   Calendar,
   GraduationCap,
   Stethoscope,
   Award,
   CheckCircle2,
-  ChevronRight,
   LayoutGrid,
   MessageSquare,
 } from 'lucide-react';
@@ -64,25 +62,20 @@ function isAvailableToday(availableDays) {
 
 /* ─── Component ───────────────────────────────────────────── */
 const Departments = ({ hospitalData }) => {
-  const departments = hospitalData?.departments || [];
-  const doctors = hospitalData?.doctors || [];
+  const departments = useMemo(() => hospitalData?.departments || [], [hospitalData]);
+  const doctors = useMemo(() => hospitalData?.doctors || [], [hospitalData]);
 
-  const [activeDept, setActiveDept] = useState('');
+  const [selectedDept, setSelectedDept] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
   const [animating, setAnimating] = useState(false);
 
-  // Set initial default active department once data loads
-  useEffect(() => {
-    if (departments.length > 0 && !activeDept) {
-      setActiveDept(departments[0]);
-    }
-  }, [departments, activeDept]);
+  const activeDept = selectedDept || (departments.length > 0 ? departments[0] : '');
 
   /* ── Filter logic ── */
   const filteredDoctors = useMemo(() => {
     const q = searchQuery.toLowerCase().trim();
     return doctors.filter((doc) => {
-      const matchesDept = activeDept === 'All' || doc.department === activeDept;
+      const matchesDept = !activeDept || activeDept === 'All' || doc.department === activeDept;
       const matchesSearch =
         !q ||
         doc.name.toLowerCase().includes(q) ||
@@ -97,7 +90,7 @@ const Departments = ({ hospitalData }) => {
     if (dept === activeDept) return;
     setAnimating(true);
     setTimeout(() => {
-      setActiveDept(dept);
+      setSelectedDept(dept);
       setAnimating(false);
     }, 220);
   };
@@ -110,7 +103,6 @@ const Departments = ({ hospitalData }) => {
       setTimeout(() => {
         const textarea = document.querySelector('.chat-input');
         if (textarea) {
-          const firstName = doc.name.replace('Dr. ', '').split(' ')[0];
           const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
             window.HTMLTextAreaElement.prototype,
             'value'
@@ -126,7 +118,11 @@ const Departments = ({ hospitalData }) => {
     }
   };
 
-  if (!hospitalData) return null;
+  /* Preserve the section's id in the DOM while data is loading so navbar
+     scroll-links always find their target element. */
+  if (!hospitalData) {
+    return <section id="departments" style={{ padding: 0, margin: 0, height: 0, overflow: 'hidden' }} />;
+  }
 
   return (
     <section id="departments" className="landing-section dept-section">
