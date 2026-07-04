@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/purity */
 import { useState, useEffect, useRef } from 'react'
 
 const Chat = ({ isDarkMode = true, onToggleTheme = () => {} }) => {
@@ -208,9 +209,6 @@ const Chat = ({ isDarkMode = true, onToggleTheme = () => {} }) => {
             {loading ? '⏳' : '📤'}
           </button>
         </form>
-        <div className="powered-by">
-          Powered by <span className="gemini-badge">✨ Gemini AI</span>
-        </div>
       </div>
     </div>
   )

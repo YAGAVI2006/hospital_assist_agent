@@ -25,15 +25,18 @@ function App() {
     }
   }, [isDarkMode])
 
-  // Fetch hospital data from the backend to verify the endpoint is working
+  // Fetch hospital data from the backend
   useEffect(() => {
     fetch('http://localhost:5000/hospital-data')
-      .then(res => res.json())
-      .then(data => {
-        setHospitalData(data)
-        console.log('Successfully fetched hospital data from backend:', data)
+      .then(res => {
+        if (!res.ok) throw new Error(`Backend returned HTTP ${res.status}`);
+        return res.json();
       })
-      .catch(err => console.error('Error fetching hospital data from backend:', err))
+      .then(data => {
+        setHospitalData(data);
+        console.log('Successfully fetched hospital data from backend:', data);
+      })
+      .catch(err => console.error('Error fetching hospital data from backend:', err));
   }, [])
 
   const toggleTheme = () => {

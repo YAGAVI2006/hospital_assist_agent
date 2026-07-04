@@ -3,7 +3,6 @@ import {
   Phone,
   Mail,
   MapPin,
-  ExternalLink,
 } from 'lucide-react';
 
 const Footer = ({ hospitalData }) => {

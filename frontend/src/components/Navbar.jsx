@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Calendar, Sun, Moon, HeartPulse } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+
+const navLinks = [
+  { name: 'Home', href: '#home' },
+  { name: 'About', href: '#about' },
+  { name: 'Departments', href: '#departments' },
+  { name: 'Doctors', href: '#doctors' },
+  { name: 'Services', href: '#services' },
+  { name: 'Contact', href: '#contact' },
+];
 
 const Navbar = ({ isDarkMode, onToggleTheme, onConsultAI }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const [activeSection, setActiveSection] = useState('home');
-
-  const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Departments', href: '#departments' },
-    { name: 'Doctors', href: '#doctors' },
-    { name: 'Services', href: '#services' },
-    { name: 'Contact', href: '#contact' },
-  ];
 
   // Scroll spy for active link and hide/show navbar on scroll
   useEffect(() => {

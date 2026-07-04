@@ -1,11 +1,10 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { MessageSquare, X, ChevronDown, Sparkles } from 'lucide-react';
 
 const FloatingAIWidget = ({ hospitalName }) => {
   const [promptVisible, setPromptVisible] = useState(false);
   const [widgetHidden, setWidgetHidden] = useState(false);
   const [dismissed, setDismissed] = useState(false);
-  const chatSectionRef = useRef(null);
 
   // Show the welcome prompt after 3 seconds on first load
   useEffect(() => {
