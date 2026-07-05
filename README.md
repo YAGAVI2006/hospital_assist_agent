@@ -235,20 +235,6 @@ React Application
 
 ---
 
-# 📸 Screenshots
-
-Add screenshots of the following pages:
-
-* Home Page
-* About
-* Departments
-* Doctors
-* Services
-* AI Assistant
-* Contact Page
-
----
-
 # 🎯 Key Highlights
 
 * AI-powered Hospital Information Assistant
